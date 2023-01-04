@@ -94,7 +94,3 @@ tablespace data1;
 CREATE TABLE proyecto_admin.funcion_respaldo
 CLUSTER proyecto_admin.project_clu(id_funcion)
 as select * from proyecto_admin.FUNCION;
-
-
-CREATE PARTITION
-
