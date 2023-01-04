@@ -63,8 +63,12 @@ CREATE TABLE PELICULA(
     ruta_avance_pelicula varchar2(100) not null,
     duracion number not null,
     nombre_pelicula varchar2(100) not null,
-    id_genero number foreign key references GENERO(id_genero)
-    id_clasificacion number foreign key references CLASIFICACION(id_clasificacion)
+    id_genero number,
+    id_clasificacion number,
+    constraint fk_pelicula_genero foreign key (id_genero) 
+    references GENERO(id_genero),
+    constraint fk_pelicula_clasificacion foreign key (id_clasificacion) 
+    references CLASIFICACION(id_clasificacion)
 )
 -- Creación de Particionamiento
 PARTITION BY HASH(id_pelicula)
@@ -72,12 +76,20 @@ PARTITIONS 5;
 
 CREATE TABLE FUNCION(
     id_funcion number primary key,
-    horario datetime not null,
-    subtitulado boolean not null,
-    id_pelicula number foreign key references PELICULA(id_pelicula),
-    id_idioma number foreign key references IDIOMA(id_idioma),
-    id_cine number foreign key references CINE(id_cine),
-    id_formato number foreign key references FORMATO_PELICULA(id_formato)
+    horario date not null,
+    subtitulado char(1) not null,
+    id_pelicula number,
+    id_idioma number,
+    id_cine number,
+    id_formato number,
+    constraint fk_funcion_pelicula foreign key (id_pelicula) 
+    references PELICULA(id_pelicula),
+    constraint fk_funcion_idioma foreign key (id_idioma) 
+    references IDIOMA(id_idioma),
+    constraint fk_funcion_cine foreign key (id_cine) 
+    references CINE(id_cine),
+    constraint fk_funcion_formato foreign key (id_formato) 
+    references FORMATO_PELICULA(id_formato)
 );
 -- Creación Tabla Dinámica
 
