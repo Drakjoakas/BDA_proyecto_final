@@ -1,13 +1,13 @@
 -- Creación de Table Spaces
 
 CREATE TABLESPACE DATA1
-DATAFILE 'C:\data1.dbf' SIZE 10M;
+DATAFILE 'C:\app\oracle\product\18.3.0\dbhome_1\oradata\OLAP\DATA1.DBF' SIZE 10M;
 
 CREATE TABLESPACE DATA2
-DATAFILE 'C:\data2.dbf' SIZE 10M;
+DATAFILE 'C:\app\oracle\product\18.3.0\dbhome_1\oradata\OLAP\DATA2.DBF' SIZE 10M;
 
 CREATE TABLESPACE DATA3
-DATAFILE 'C:\data3.dbf' SIZE 10M;
+DATAFILE 'C:\app\oracle\product\18.3.0\dbhome_1\oradata\OLAP\DATA3.DBF' SIZE 10M;
 
 -- Creación del Usuario para el proyecto
 
